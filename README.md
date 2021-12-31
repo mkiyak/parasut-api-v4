@@ -4,7 +4,7 @@
 
 ## Kurulum
 ```
-composer require inpinos/php-parasut-api-v4
+composer require mkiyak/parasut-api-v4
 ```
 
 ## Kullanımı
