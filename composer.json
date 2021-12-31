@@ -16,6 +16,10 @@
         {
             "name": "Mehmet KIYAK",
             "email": "mkiyak511@gmail.com"
+        },
+        {
+            "name": "Esat Köseoğlu",
+            "email": "ekoseoglu22@gmail.com"
         }
     ],
     "minimum-stability": "stable"
