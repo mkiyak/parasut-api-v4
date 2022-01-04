@@ -121,7 +121,6 @@ class Authorization extends Request
         $responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $responseData = json_decode($jsonData, true);
         curl_close($ch);
-        dd($responseData);
 
         if ($responseCode === 200)
         {
