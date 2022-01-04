@@ -47,7 +47,7 @@ $createCategoryData = [
 		"attributes" => [
 			"name" => "XXXX", //*required // Kategori Adı
 			"bg_color" => "XXXX", // Arka plan rengi
-			"text_color" => "person", // Yazı rengi
+			"text_color" => "XXXX", // Yazı rengi
 			"category_type" => "XXX", // Kategori Tipi
 			"parent_id" => 0,
 		]
@@ -64,7 +64,7 @@ $editCategoryData = [
 		"attributes" => [
             "name" => "XXXX", //*required // Kategori Adı
             "bg_color" => "XXXX", // Arka plan rengi
-            "text_color" => "person", // Yazı rengi
+            "text_color" => "XXXX", // Yazı rengi
             "category_type" => "XXX", // Kategori Tipi
             "parent_id" => 0,
 		]

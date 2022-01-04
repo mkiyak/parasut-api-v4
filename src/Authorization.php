@@ -1,7 +1,6 @@
 <?php
 namespace Parasut\API;
 use Parasut\API\Exception;
-use Parasut\API\Exception;
 
 class Authorization extends Request
 {
