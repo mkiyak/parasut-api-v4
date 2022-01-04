@@ -445,3 +445,87 @@ $editProduct = $products->edit($product_id, $productData);
 $product_id = 123456;
 $deleteProduct = $products->delete($product_id);
 ```
+
+
+### Kategori İşlemleri
+```php
+$categories = new \Parasut\API\Categories($parasutAuthorization);
+```
+
+- Kategori Listesi
+```php
+$categoryList = $categories->list_categories();
+```
+
+- Kategori Görüntüleme
+```php
+$category_id = 123456; //integer
+$showCategory = $categories->show($category_id);
+```
+
+- Kategori Arama
+```php
+$searchCategoryData1 = [
+	"name" => "XXXX"
+];
+
+$searchCategoryData2 = [
+	"name" => "XXXX",
+	"category_type" => "XXXX"
+];
+
+$searchCategory1 = $categories->search($searchCategoryData1);
+$searchCategory2 = $categories->search($searchCategoryData2);
+```
+
+- Kategori Ekleme
+```php
+$createCategoryData = [
+	"data" => [
+		"type" => "item_categories",
+		"attributes" => [
+			"name" => "XXXX", //*required // Kategori Adı
+			"bg_color" => "XXXX", // Arka plan rengi
+			"text_color" => "person", // Yazı rengi
+			"category_type" => "XXX", // Kategori Tipi
+			"parent_id" => 0,
+		]
+	]
+];
+$createCategory = $categories->create($createCategoryData);
+```
+
+- Kategori Düzenleme
+```php
+$category_id = 123456; //integer
+$editCategoryData = [
+	"data" => [
+		"type" => "item_categories",
+		"attributes" => [
+            "name" => "XXXX", //*required // Kategori Adı
+            "bg_color" => "XXXX", // Arka plan rengi
+            "text_color" => "person", // Yazı rengi
+            "category_type" => "XXX", // Kategori Tipi
+            "parent_id" => 0,
+		]
+	]
+];
+$editCategory = $categories->edit($category_id, $editCategoryData);
+```
+
+- Kategori Silme
+```php
+$category_id = 123456; //integer
+$deleteCategory = $categories->delete($category_id);
+```
+
+### Diğer İşlemler
+
+- Etiketler
+- Stok Hareketleri
+- Depolar
+- Çalışanlar
+- Kasa ve Banka
+```php
+ Yukarıda ki işlemleri ve diğer tüm işlemleri tests klasörü içerisinde bulabilirsiniz.
+```
