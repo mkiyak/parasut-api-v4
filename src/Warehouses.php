@@ -1,7 +1,7 @@
 <?php
 namespace Parasut\API;
 
-class Categories
+class Warehouses
 {
 	public $connector;
 
@@ -19,10 +19,10 @@ class Categories
 	 * @param int $size
 	 * @return array|\stdClass
 	 */
-	public function list_categories($page = 1, $size = 25)
+	public function list_warehouses($page = 1, $size = 25)
 	{
 		return $this->connector->request(
-			"item_categories?page[number]=$page&page[size]=$size",
+			"warehouses?page[number]=$page&page[size]=$size",
 			[],
 			"GET"
 		);
@@ -32,31 +32,31 @@ class Categories
 	 * Contact total count
 	 * @return integer
 	 */
-	public function count_categories()
+	public function count_warehouses()
 	{
 		return $this->connector->request(
-			"item_categories?page[number]=1&page[size]=2",
+			"warehouses?page[number]=1&page[size]=2",
 			[],
 			"GET"
 		)->result->meta->total_count;
 	}
 
 	/**
-	 * Show category
-	 * @param $category_id
+	 * Show warehouses
+	 * @param $warehouses_id
 	 * @return array|\stdClass
 	 */
-	public function show($category_id)
+	public function show($warehouses_id)
 	{
 		return $this->connector->request(
-			"item_categories/$category_id",
+			"warehouses/$warehouses_id",
 			[],
 			"GET"
 		);
 	}
 
 	/**
-	 * Search category with params
+	 * Search warehouses with params
 	 * @param array $data
 	 * @return array|\stdClass
 	 */
@@ -72,50 +72,50 @@ class Categories
 		}
 
 		return $this->connector->request(
-			"item_categories?$filter",
+			"warehouses?$filter",
 			[],
 			"GET"
 		);
 	}
 
 	/**
-	 * Create category
+	 * Create warehouses
 	 * @param $data
 	 * @return array|\stdClass
 	 */
 	public function create($data)
 	{
 		return $this->connector->request(
-			"item_categories",
+			"warehouses",
 			$data,
 			"POST"
 		);
 	}
 
 	/**
-	 * Edit category
-	 * @param $category_id
+	 * Edit warehouses
+	 * @param $warehouses_id
 	 * @param array $data
 	 * @return array|\stdClass
 	 */
-	public function edit($category_id , $data = [])
+	public function edit($warehouses_id , $data = [])
 	{
 		return $this->connector->request(
-			"item_categories/$category_id",
+			"warehouses/$warehouses_id",
 			$data,
 			"PUT"
 		);
 	}
 
 	/**
-	 * Delete category
-	 * @param $category_id
+	 * Delete warehouses
+	 * @param $warehouses_id
 	 * @return array|\stdClass
 	 */
-	public function delete($category_id)
+	public function delete($warehouses_id)
 	{
 		return $this->connector->request(
-			"item_categories/$category_id",
+			"warehouses/$warehouses_id",
 			[],
 			"DELETE"
 		);
