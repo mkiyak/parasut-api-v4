@@ -22,7 +22,7 @@ $purchaseList = $purchases->list_purchase();
 
 // Gider faturası görüntüleme
 $purchase_id = 123456; //integer
-$showpurchase = $purchases->show($purchase_id); //active_e_document,contact parametreleri ile beraber gelir
+$showpurchase = $purchases->show($purchase_id);
 
 // Gider faturası arama
 $searchpurchaseData1 = [
@@ -187,3 +187,20 @@ $deletepurchase = $purchases->delete($purchase_id);
 // Gider faturası iptal etme
 $purchase_id = 123456;
 $cancelpurchase = $purchases->cancel($purchase_id);
+
+//pay Salary
+$purchase_id = 123456;
+$payPurchaseData = [
+    "data" => [
+        "type" => "payments",
+        "attributes" => [
+            "description" => "string", // Açıklama
+            "account_id" => 1234, // Kasa veya Banka id
+            "date" => "YYYY-MM-DD", //ödeme tarihi
+            "amount" => 123, //ödeme tutarı
+            "exchange_rate" => 0
+        ]
+    ]
+];
+$purchases->pay($purchase_id, $payPurchaseData);
+//pay Salary
